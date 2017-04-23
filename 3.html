@@ -3,21 +3,74 @@
 <head>
     <title>Demo</title>
     <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+    <style>
+        input[type="range"] {
+            -webkit-appearance: none;
+            border-radius: 2px;
+            width: 200px;
+            height: 3px;
+            background-image: -webkit-linear-gradient(left, #f22 0%, #f22 50%, #fff 50%, #fff 100%);
+            box-shadow: inset #ebb 0 0 5px;
+            outline: none;
+            transition: .1s;
+        }
+        
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 10px;
+            height: 10px;
+            background: #f22;
+            border-radius: 50%;
+            transition: .1s;
+        }
+        
+        input[type="range"]::-webkit-slider-thumb:hover,
+        input[type="range"]::-webkit-slider-thumb:active {
+            width: 16px;
+            height: 16px;
+        }
+    </style>
+    <script src="http://www.oxxostudio.tw/js/lib/jquery.min.js"></script>
+    <script>
+        $(function() {
+            var r = $('input');
+            r.on('mouseenter', function() {
+                var p = r.val();
+                r.on('click', function() {
+                    p = r.val();
+                    bg(p);
+                });
+                r.on('mousemove', function() {
+                    p = r.val();
+                    bg(p);
+                });
+            });
+
+            function bg(n) {
+                r.css({
+                    'background-image': '-webkit-linear-gradient(left ,#f22 0%,#f22 ' + n + '%,#fff ' + n + '%, #fff 100%)'
+                });
+            }
+        });
+    </script>
 </head>
 <form>
     <div>
         <img class="preview" style="max-width: 150px; max-height: 150px;">
-        
 
-        <input type="range" min='5' max='100' value='85' id='threshold'>threshold (85)</input>
+        <label for="rangeinput">threshold</label>
+        <input type="range" min='5' max='100' value='85' id='threshold' onchange="rangevalue.value=value">  </input>
+        <output type="text" id="rangevalue" onchange="rangeinput.value=value"></output>
         <button onclick="getCountry()">get</button>
-
+        
         <script language="JavaScript" src="demo.bundle3.js"></script>
     </div>
 </form>
 
 <body>
-
+    <p >previous picture</p>
+    <a href="2.html"><img src="2.jpg" width="50"></a>
+    
 </body>
 
 </html>
