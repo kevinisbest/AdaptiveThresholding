@@ -89,7 +89,7 @@ function getIntegralAt(integral, width, x1, y1, x2, y2) {
 }
 
 
-var testImage64 = "1.jpg";
+var testImage64 = "2.jpg";
 //var image = readImage();
 //
 var testImage = new Image();
