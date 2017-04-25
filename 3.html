@@ -57,20 +57,21 @@
 <form>
     <div>
         <img class="preview" style="max-width: 150px; max-height: 150px;">
-
-        <label for="rangeinput">threshold</label>
-        <input type="range" min='5' max='100' value='85' id='threshold' onchange="rangevalue.value=value">  </input>
+        <span style="font-family:Microsoft JhengHei;">
+        <label for="rangeinput">Threshold</label></span>
+        <input type="range" min='5' max='100' value='85' id='threshold' onchange="rangevalue.value=value"> </input>
         <output type="text" id="rangevalue" onchange="rangeinput.value=value"></output>
-        <button onclick="getCountry()">get</button>
-        
+        <button onclick="getCountry()" style="font-family:Microsoft JhengHei;">get</button>
+
         <script language="JavaScript" src="demo.bundle3.js"></script>
     </div>
 </form>
 
 <body>
+    <span style="font-family:Microsoft JhengHei;">
     <p >previous picture</p>
     <a href="2.html"><img src="2.jpg" width="50"></a>
-    
+    </span>
 </body>
 
 </html>
