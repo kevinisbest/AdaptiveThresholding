@@ -93,7 +93,7 @@ var testImage64 = "3.jpg";
 //var image = readImage();
 //
 var testImage = new Image();
-testImage.src= testImage64;
+testImage.src = testImage64;
 
 //var input = document.body.appendChild(testImage);
 //if(input.files){
