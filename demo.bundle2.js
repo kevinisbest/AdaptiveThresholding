@@ -95,41 +95,6 @@ var testImage64 = "2.jpg";
 var testImage = new Image();
 testImage.src = testImage64;
 
-//var input = document.body.appendChild(testImage);
-//if(input.files){
-//                //读取图片数据
-//  var f = input.files[0];
-//  var reader = new FileReader();
-//  reader.onload = function (e) {
-//      var data = e.target.result;
-//      //加载图片获取图片真实宽度和高度
-//      var image = new Image();
-//      image.onload=function(){
-//          var width = image.width;
-//          var height = image.height;
-//          alert(width+'======'+height+"====="+f.size);
-//      };
-//      image.src= data;
-//      testImage.src= image;
-//  };
-//  reader.readAsDataURL(f);
-//  }else{
-//  var image = new Image(); 
-//  image.onload =function(){
-//      var width = image.width;
-//      var height = image.height;
-//      var fileSize = image.fileSize;
-//      alert(width+'======'+height+"====="+fileSize);
-//  }
-//  image.src = input.value;
-//      testImage.src= image;
-//
-//  }
-//
-//
-
-
-
 
 if (testImage.width > 225) {
     testImage.width = 225;

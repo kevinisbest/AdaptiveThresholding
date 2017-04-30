@@ -33,9 +33,9 @@ function computeAdaptiveThreshold(sourceImageData, ratio, callback) {
             var area = (x2 - x1 + 1) * (y2 - y1 + 1);
             var localIntegral = getIntegralAt(integral, width, x1, y1, x2, y2);
             if (value * area > localIntegral * ratio) {
-                resultData32[lineIndex + x] = 0xFFFFFFFF;
+                resultData32[lineIndex + x] = 0xFFFFFFFF;//white
             } else {
-                resultData32[lineIndex + x] = 0xFF000000;
+                resultData32[lineIndex + x] = 0xFF000000;//black
             }
         }
     }
@@ -95,41 +95,6 @@ var testImage64 = "1.jpg";
 var testImage = new Image();
 testImage.src = testImage64;
 
-//var input = document.body.appendChild(testImage);
-//if(input.files){
-//                //读取图片数据
-//  var f = input.files[0];
-//  var reader = new FileReader();
-//  reader.onload = function (e) {
-//      var data = e.target.result;
-//      //加载图片获取图片真实宽度和高度
-//      var image = new Image();
-//      image.onload=function(){
-//          var width = image.width;
-//          var height = image.height;
-//          alert(width+'======'+height+"====="+f.size);
-//      };
-//      image.src= data;
-//      testImage.src= image;
-//  };
-//  reader.readAsDataURL(f);
-//  }else{
-//  var image = new Image(); 
-//  image.onload =function(){
-//      var width = image.width;
-//      var height = image.height;
-//      var fileSize = image.fileSize;
-//      alert(width+'======'+height+"====="+fileSize);
-//  }
-//  image.src = input.value;
-//      testImage.src= image;
-//
-//  }
-//
-//
-
-
-
 
 if (testImage.width > 225) {
     testImage.width = 225;
@@ -155,7 +120,7 @@ if (canvas.height > 225) {
     canvas.height = 225;
 };
 document.body.appendChild(canvas);
-var ctx = canvas.getContext('2d'); //2d
+var ctx = canvas.getContext('2d'); //2d image
 ctx.drawImage(testImage, 0, 0);
 
 var testImageData = ctx.getImageData(0, 0, testImage.width, testImage.height);
